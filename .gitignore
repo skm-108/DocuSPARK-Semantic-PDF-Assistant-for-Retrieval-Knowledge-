@@ -1,0 +1,10 @@
+.env
+*.log
+.DS_Store
+node_modules/
+dist/
+dist-ssr/
+__pycache__/
+*.pyc
+chroma_db/
+temp_*.pdf
