@@ -1,102 +1,279 @@
-# DocuSPARK
+# ✨ DocuSPARK
 
-DocuSPARK is an AI-powered document assistant for uploading PDFs, asking questions in natural language, and getting grounded answers from the document itself.
+<div align="center">
 
-## What it does
+# 📄⚡ DocuSPARK  
+### *AI-Powered PDF Question Answering Assistant*
 
-- Upload PDF documents through a simple React interface.
-- Split and index the document into searchable chunks.
-- Ask questions and get answers powered by a RAG pipeline.
-- View source snippets from the uploaded document.
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3N6bWtxM2h1N2F5N3R1d2NmdmV2MnB4a2FxdWl0aDF3d2M3ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0HlNaQ6gWfllcjDO/giphy.gif" width="850"/>
 
-## Architecture
+<br/>
 
-DocuSPARK uses a lightweight Retrieval-Augmented Generation flow:
+![Python](https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi)
+![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react)
+![Gemini](https://img.shields.io/badge/Google-Gemini-orange?style=for-the-badge&logo=google)
+![LangChain](https://img.shields.io/badge/LangChain-RAG-success?style=for-the-badge)
+![ChromaDB](https://img.shields.io/badge/ChromaDB-VectorDB-purple?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-red?style=for-the-badge)
 
-1. A PDF is uploaded from the browser.
-2. The backend extracts text from the file.
-3. The text is split into chunks and embedded with `sentence-transformers/all-MiniLM-L6-v2`.
-4. The chunks are stored in Chroma.
-5. A Gemini model generates answers using the retrieved context.
+</div>
 
-## Tech Stack
+---
 
-- Frontend: React, TypeScript, Vite
-- Backend: FastAPI, Python
-- AI: LangChain, Chroma, Gemini API, Hugging Face embeddings
+# 🚀 Overview
 
-## Project Structure
+**DocuSPARK** is a modern AI-powered document assistant that allows users to upload PDF documents and ask questions in natural language.
 
-- `client/` - React frontend
-- `server/` - FastAPI backend and RAG pipeline
+Using an advanced **Retrieval-Augmented Generation (RAG)** pipeline, the system retrieves relevant document chunks and generates intelligent grounded answers using **Google Gemini AI**.
 
-## Setup
+---
 
-### Prerequisites
+# ✨ Features
+
+✅ Upload PDF Documents  
+✅ AI-Powered Question Answering  
+✅ Source-Aware Responses  
+✅ Semantic Search  
+✅ FastAPI Backend  
+✅ Beautiful React Frontend  
+✅ Chroma Vector Database  
+✅ Gemini-Powered AI Generation  
+✅ Fast & Lightweight Architecture  
+
+---
+
+# 🧠 How It Works
+
+```text
+          ┌──────────────────┐
+          │   Upload PDF     │
+          └────────┬─────────┘
+                   ↓
+          ┌──────────────────┐
+          │ Text Extraction  │
+          └────────┬─────────┘
+                   ↓
+          ┌──────────────────┐
+          │  Chunk Creation  │
+          └────────┬─────────┘
+                   ↓
+          ┌──────────────────┐
+          │ Generate Vectors │
+          └────────┬─────────┘
+                   ↓
+          ┌──────────────────┐
+          │   Chroma Store   │
+          └────────┬─────────┘
+                   ↓
+          ┌──────────────────┐
+          │ Semantic Search  │
+          └────────┬─────────┘
+                   ↓
+          ┌──────────────────┐
+          │ Gemini Response  │
+          └──────────────────┘
+```
+
+---
+
+# 🛠 Tech Stack
+
+## 🎨 Frontend
+- React
+- TypeScript
+- Vite
+
+## ⚙ Backend
+- FastAPI
+- Python
+
+## 🤖 AI Stack
+- LangChain
+- ChromaDB
+- Google Gemini API
+- Sentence Transformers
+- Hugging Face Embeddings
+
+---
+
+# 📂 Project Structure
+
+```text
+DocuSPARK/
+│
+├── client/                # React Frontend
+│
+├── server/                # FastAPI Backend
+│   ├── routes/
+│   ├── services/
+│   ├── utils/
+│   └── main.py
+│
+├── chroma_db/             # Vector Database
+│
+├── requirements.txt
+│
+└── README.md
+```
+
+---
+
+# ⚙ Installation Guide
+
+# 📌 Prerequisites
 
 - Node.js 18+
-- Python 3.13+
-- A Gemini API key from Google AI Studio
+- Python 3.11 Recommended
+- Google Gemini API Key
 
-### Backend
+---
 
-1. Open the server folder:
-  ```powershell
-  cd D:\DocuSpark\DocuSPARK\server
-  ```
+# 🔧 Backend Setup
 
-2. Create `server/.env` and add your key:
-  ```env
-  GOOGLE_API_KEY=your_real_gemini_api_key
-  ```
+## 1️⃣ Navigate to Backend
 
-3. Install dependencies:
-  ```powershell
-  d:\DocuSpark\.venv\Scripts\python.exe -m pip install -r requirements.txt
-  ```
+```powershell
+cd D:\DocuSpark\DocuSPARK\server
+```
 
-4. Start the backend:
-  ```powershell
-  d:\DocuSpark\.venv\Scripts\python.exe -m uvicorn main:app --reload --host 127.0.0.1 --port 8000
-  ```
+---
 
-### Frontend
+## 2️⃣ Create `.env`
 
-1. Open the client folder:
-  ```powershell
-  cd D:\DocuSpark\DocuSPARK\client
-  ```
+```env
+GOOGLE_API_KEY=your_real_gemini_api_key
+```
 
-2. Install dependencies:
-  ```powershell
-  npm install
-  ```
+---
 
-3. Start the frontend:
-  ```powershell
-  npm run dev
-  ```
+## 3️⃣ Install Dependencies
 
-## Run the app
+```powershell
+d:\DocuSpark\.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
 
-Once both servers are running, open:
+---
 
-- Frontend: `http://localhost:5173`
-- Backend: `http://127.0.0.1:8000`
+## 4️⃣ Run Backend Server
 
-## How to use
+```powershell
+d:\DocuSpark\.venv\Scripts\python.exe -m uvicorn main:app --reload --host 127.0.0.1 --port 8000
+```
 
-1. Upload a PDF.
-2. Wait for the document to be processed.
-3. Type a question about the PDF.
-4. Press Enter and review the answer and sources.
+---
 
-## Notes
+# 🎨 Frontend Setup
 
-- The backend keeps the latest processed PDF in Chroma storage.
-- If you restart the backend and want to query again, upload the PDF again.
-- If the app shows no answer, confirm the PDF was processed successfully and the Gemini key is present in `server/.env`.
+## 1️⃣ Navigate to Frontend
 
-## License
+```powershell
+cd D:\DocuSpark\DocuSPARK\client
+```
 
-This project is licensed under the MIT License.
+---
+
+## 2️⃣ Install Packages
+
+```powershell
+npm install
+```
+
+---
+
+## 3️⃣ Start Frontend
+
+```powershell
+npm run dev
+```
+
+---
+
+# 🌐 Run Application
+
+| Service | URL |
+|---|---|
+| Frontend | http://localhost:5173 |
+| Backend | http://127.0.0.1:8000 |
+
+---
+
+# 📸 UI Preview
+
+<div align="center">
+
+<img src="https://media.giphy.com/media/coxQHKASG60HrHtvkt/giphy.gif" width="850"/>
+
+</div>
+
+---
+
+# 🔥 Why DocuSPARK?
+
+✨ Lightning-fast semantic retrieval  
+✨ Human-like grounded responses  
+✨ Clean developer architecture  
+✨ Easy deployment & setup  
+✨ Modern AI workflow  
+✨ Optimized RAG pipeline  
+
+---
+
+# 🚀 Future Improvements
+
+- ✅ Multi-PDF Chat
+- ✅ Authentication System
+- ✅ Cloud Deployment
+- ✅ OCR Support
+- ✅ PDF Highlighting
+- ✅ Conversation Memory
+- ✅ Drag & Drop Upload
+- ✅ Dark Mode UI
+
+---
+
+# 🧩 Common Issues
+
+## ❌ `ModuleNotFoundError: No module named 'pyaudioop'`
+
+Python 3.13 removed support for `audioop`.
+
+### ✅ Recommended Fix
+
+Use Python 3.11:
+
+```powershell
+py -3.11 -m venv .venv
+```
+
+Then reinstall requirements:
+
+```powershell
+pip install -r requirements.txt
+```
+
+---
+
+# 📄 License
+
+Licensed under the MIT License.
+
+---
+
+# ⭐ Support
+
+If you like this project:
+
+🌟 Star the repository  
+🍴 Fork the project  
+📢 Share with developers  
+
+---
+
+<div align="center">
+
+# 💙 Built with AI + Innovation
+
+### Made using FastAPI, React, LangChain & Gemini
+
+</div>
